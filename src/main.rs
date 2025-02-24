@@ -50,6 +50,8 @@ fn main() {
         path::get_current_path()
     );
 
+    println!("check if path exist: {}", path::path_exists("./main.rs"));
+
     // macros
     let _new_vec: Vec<String> = vec_of_strings!("first_string", "second_string");
 }
