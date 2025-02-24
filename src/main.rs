@@ -1,7 +1,9 @@
-mod logs;
+pub mod logs;
+pub mod usage_exit;
 
 fn main() {
     println!("Here's the Core crates for all Lrn project! Here's some sample of features:");
+    println!("[LOGS] example of the logs module");
     logs::error_log("Error log sample");
     logs::info_log("Info log sample");
     logs::error_log_with_code(
@@ -9,4 +11,33 @@ fn main() {
         "Enter the code you want, like a error returned from a function",
     );
     logs::lrn_log("Lrn", "Lrn log sample");
+    println!("[Command and exit] example of the command and exit module");
+    usage_exit::command_usage(
+        "
+    Usage: example command [options]
+
+    Commands:
+        run             Run the process
+        help            Show this help message
+
+    Options:
+
+        -h, --help      Show command usage
+        -v, --version   Show the current version",
+    );
+    usage_exit::command_and_exit_with_code(
+        "
+Usage: example command [options]
+
+
+Commands:
+    run             Run the process
+    help            Show this help message
+
+Options:
+
+    -h, --help      Show command usage
+    -v, --version   Show the current version",
+        9,
+    );
 }
