@@ -13,7 +13,9 @@ fn main() {
         "Enter the code you want, like a error returned from a function",
     );
     logs::lrn_log("Lrn", "Lrn log sample");
-    println!("[Command and exit] example of the command and exit module");
+
+    // command and exist usage
+
     //     usage_exit::command_usage(
     //         "
     //     Usage: example command [options]

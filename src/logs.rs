@@ -1,5 +1,8 @@
 use colored::{ColoredString, Colorize};
 
+//TODO
+// add a struct or enum to select a color
+
 /// The `info_log` function prints an informational message with a green "[INFO]" tag.
 ///
 /// Arguments:
