@@ -1,4 +1,6 @@
 pub mod logs;
+pub mod macros;
+pub mod path;
 pub mod usage_exit;
 
 fn main() {
@@ -12,32 +14,42 @@ fn main() {
     );
     logs::lrn_log("Lrn", "Lrn log sample");
     println!("[Command and exit] example of the command and exit module");
-    usage_exit::command_usage(
-        "
-    Usage: example command [options]
+    //     usage_exit::command_usage(
+    //         "
+    //     Usage: example command [options]
 
-    Commands:
-        run             Run the process
-        help            Show this help message
+    //     Commands:
+    //         run             Run the process
+    //         help            Show this help message
 
-    Options:
+    //     Options:
 
-        -h, --help      Show command usage
-        -v, --version   Show the current version",
+    //         -h, --help      Show command usage
+    //         -v, --version   Show the current version",
+    //     );
+    //     usage_exit::command_and_exit_with_code(
+    //         "
+    // Usage: example command [options]
+
+    // Commands:
+    //     run             Run the process
+    //     help            Show this help message
+
+    // Options:
+
+    //     -h, --help      Show command usage
+    //     -v, --version   Show the current version",
+    //         9,
+    //     );
+
+    // path
+    println!("print the current path: {}", path::get_current_path());
+    path::change_work_dir("./src");
+    println!(
+        "change working dir... new working dir: {}",
+        path::get_current_path()
     );
-    usage_exit::command_and_exit_with_code(
-        "
-Usage: example command [options]
 
-
-Commands:
-    run             Run the process
-    help            Show this help message
-
-Options:
-
-    -h, --help      Show command usage
-    -v, --version   Show the current version",
-        9,
-    );
+    // macros
+    let _new_vec: Vec<String> = vec_of_strings!("first_string", "second_string");
 }
