@@ -2,6 +2,15 @@
 name = "lrncore"
 version = "0.1.0"
 edition = "2024"
+description = "core library for lrn-project"
+repository = "https://github.com/Lrn-projects/LrnCore.git"
+readme = "./README.md"
+authors = ["Elouan Da-Costa Peixoto <elouandacostapeixoto@gmail.com>"]
+include = ["/src"]
+
+[lib]
+name = "lrncore"
+path = "src/lib.rs"
 
 [dependencies]
 colored = "3.0.0"
