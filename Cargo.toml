@@ -1,7 +1,7 @@
 [package]
 name = "lrncore"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 description = "core library for lrn-project"
 repository = "https://github.com/Lrn-projects/LrnCore.git"
 readme = "./README.md"
