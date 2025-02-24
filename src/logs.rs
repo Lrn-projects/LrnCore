@@ -19,7 +19,7 @@ pub fn info_log(msg: &str) {
 /// message that you want to log.
 pub fn error_log(msg: &str) {
     let info = "[ERROR]".truecolor(255, 0, 0);
-    println!("{} {}", info, msg);
+    eprintln!("{} {}", info, msg);
 }
 
 /// The function `error_log_with_code` prints an error message with a specified error code in
@@ -33,7 +33,7 @@ pub fn error_log(msg: &str) {
 /// the specific error message or description associated with the error being logged.
 pub fn error_log_with_code(msg: &str, error: &str) {
     let info = "[ERROR]".truecolor(255, 0, 0);
-    println!("{} {} {}", info, msg, error);
+    eprintln!("{} {} {}", info, msg, error);
 }
 
 /// The function `lrn_log` prints a message with a colored logger tag.
