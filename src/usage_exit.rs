@@ -26,3 +26,13 @@ pub fn command_and_exit_with_code(usage: &str, code: i32) {
     println!("{}", usage);
     exit(code);
 }
+
+pub fn usage_and_exit(msg: &str, usage: &str) {
+    if msg != "" {
+        eprintln!("{}", msg);
+    }
+
+    println!("{}", usage);
+
+    exit(0);
+}
