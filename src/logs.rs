@@ -49,6 +49,6 @@ pub fn error_log_with_code(msg: &str, error: &str) {
 /// you want to log. It could be any information or data that you want to display in the log along with
 /// the logger name.
 pub fn lrn_log(logger: &str, msg: &str) {
-    let log: ColoredString = format!("[{}]", logger).truecolor(255, 94, 0);
+    let log: ColoredString = format!("[{}]", logger).truecolor(138, 43, 226);
     println!("{} {}", log, msg);
 }
