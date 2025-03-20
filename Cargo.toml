@@ -13,4 +13,5 @@ name = "lrncore"
 path = "src/lib.rs"
 
 [dependencies]
+chrono = "0.4.40"
 colored = "3.0.0"

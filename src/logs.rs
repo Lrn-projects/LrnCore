@@ -1,3 +1,4 @@
+use chrono::Utc;
 use colored::{ColoredString, Colorize};
 
 //TODO
@@ -11,7 +12,27 @@ use colored::{ColoredString, Colorize};
 /// be logged.
 pub fn info_log(msg: &str) {
     let info = "[INFO]".truecolor(0, 255, 0);
+
     println!("{} {}", info, msg);
+}
+
+/// The function `time_info_log` logs a message with a timestamp and an info tag in Rust.
+///
+/// Arguments:
+///
+/// * `msg`: The `time_info_log` function takes a message `msg` as a parameter, which is a reference to
+/// a string (`&str`). This message will be logged along with the current timestamp and an information
+/// tag.
+pub fn time_info_log(msg: &str) {
+    let info = "[INFO]".truecolor(0, 255, 0);
+    let now = Utc::now().with_timezone(&chrono::Local);
+
+    println!(
+        "{} - {} {}",
+        now.format("%Y-%m-%d %H:%M:%S").to_string(),
+        info,
+        msg
+    );
 }
 
 /// The function `error_log` prints an error message with a red "[ERROR]" tag.
@@ -22,7 +43,26 @@ pub fn info_log(msg: &str) {
 /// message that you want to log.
 pub fn error_log(msg: &str) {
     let info = "[ERROR]".truecolor(255, 0, 0);
+
     eprintln!("{} {}", info, msg);
+}
+
+/// The function `time_error_log` logs an error message with a timestamp in Rust.
+///
+/// Arguments:
+///
+/// * `msg`: The `msg` parameter in the `time_error_log` function is a reference to a string slice
+/// (`&str`) that represents the error message to be logged.
+pub fn time_error_log(msg: &str) {
+    let info = "[ERROR]".truecolor(255, 0, 0);
+    let now = Utc::now().with_timezone(&chrono::Local);
+
+    eprintln!(
+        "{} - {} {}",
+        now.format("%Y-%m-%d %H:%M:%S").to_string(),
+        info,
+        msg
+    );
 }
 
 /// The function `error_log_with_code` prints an error message with a specified error code in
@@ -51,4 +91,25 @@ pub fn error_log_with_code(msg: &str, error: &str) {
 pub fn lrn_log(logger: &str, msg: &str) {
     let log: ColoredString = format!("[{}]", logger).truecolor(138, 43, 226);
     println!("{} {}", log, msg);
+}
+
+/// The function `time_lrn_log` logs a message with a timestamp and colored logger name in Rust.
+///
+/// Arguments:
+///
+/// * `logger`: The `logger` parameter is a string that represents the name or identifier of the logger
+/// or logging component that is generating the log message.
+/// * `msg`: The `msg` parameter in the `time_lrn_log` function is a string that represents the message
+/// or information that you want to log. It is the actual content that you want to be included in the
+/// log message along with the logger name and timestamp.
+pub fn time_lrn_log(logger: &str, msg: &str) {
+    let log: ColoredString = format!("[{}]", logger).truecolor(138, 43, 226);
+    let now = Utc::now().with_timezone(&chrono::Local);
+
+    println!(
+        "{} - {} {}",
+        now.format("%Y-%m-%d %H:%M:%S").to_string(),
+        log,
+        msg
+    );
 }
