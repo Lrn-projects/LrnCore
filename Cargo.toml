@@ -1,6 +1,6 @@
 [package]
 name = "lrncore"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "core library for lrn-project"
 repository = "https://github.com/Lrn-projects/LrnCore.git"
