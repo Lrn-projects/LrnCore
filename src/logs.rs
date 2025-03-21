@@ -113,3 +113,15 @@ pub fn time_lrn_log(logger: &str, msg: &str) {
         msg
     );
 }
+
+/// The function `warning_log` prints a warning message with a colored "[WARNING]" tag.
+///
+/// Arguments:
+///
+/// * `msg`: The `msg` parameter is a reference to a string slice (`&str`) that contains the message to
+/// be logged as a warning.
+pub fn warning_log(msg: &str) {
+    let info = "[WARNING]".truecolor(255, 165, 0);
+
+    println!("{} {}", info, msg);
+}

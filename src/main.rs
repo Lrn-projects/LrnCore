@@ -14,6 +14,7 @@ fn main() {
         "Error log with code sample",
         "Enter the code you want, like a error returned from a function",
     );
+    logs::warning_log("Warning log sample");
     logs::lrn_log("Lrn", "Lrn log sample");
     logs::time_lrn_log("Lrn", "Lrn log sample with current time");
     // command and exist usage
